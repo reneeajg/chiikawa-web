@@ -1,0 +1,283 @@
+/* ========== VARIABLES ==========
+   Change colors here and the whole page updates. */
+:root {
+  --bg: #fffde8;        /* cream page background */
+  --pink: #ff8fab;      /* header, footer, headings, buttons */
+  --teal: #1ba39c;      /* small subtitle text */
+  --text: #3d3d3d;
+
+  /* card image tints */
+  --c-pink: #ffe0ec;
+  --c-blue: #c8f3ff;
+  --c-cyan: #d8fbf7;
+}
+
+/* ========== RESET / BASICS ========== */
+* {
+  box-sizing: border-box;   /* padding won't make boxes bigger than expected */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   /* makes the page glide instead of jumping */
+}
+
+body {
+  font-family: "Fredoka", "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2 {
+  color: var(--pink);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  color: var(--teal);
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 2rem;
+}
+
+/* Gray boxes reserved for pictures */
+.placeholder {
+  background: #8a8a8a;
+  border-radius: 20px;
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+  display: inline-block;     /* makes padding/sizing behave like a button */
+  text-decoration: none;     /* removes the underline browsers add to links */
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+
+.btn-light {
+  background: #fff;
+  color: var(--pink);
+}
+
+.btn-pink {
+  background: var(--pink);
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  background: var(--pink);
+  display: flex;
+  justify-content: space-between;   /* logo left, buttons right */
+  align-items: center;
+  padding: 0.75rem 2rem;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.title {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* two equal columns */
+  gap: 2rem;
+  align-items: center;
+}
+
+.title h1 {
+  color: var(--pink);
+  font-size: 2.6rem;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.title-text p {
+  color: var(--teal);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.6rem;
+}
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--c-blue);
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: none;             
+  stroke: currentColor;   
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rounded-img {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+.event-bottom-padding{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding-bottom: 0.25rem;
+}
+
+.title-image {
+  aspect-ratio: 4 / 5;   
+  width: 100%;
+}
+
+/* ========== CHARACTERS ========== */
+.characters,
+.events {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 columns */
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  border: 2px solid var(--c-pink);
+}
+
+.card-img {
+  width: 100%;
+  height: 130px;
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+.card h3,
+.event-card h3 {
+  margin-top: 0.25rem;
+  color: var(--pink);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.card p,
+.event-card p {
+  font-size: 0.8rem;
+}
+
+/* ========== EVENTS ========== */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 columns */
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.event-img {
+  height: 180px;
+  margin-bottom: 0.75rem;
+}
+
+.event-card .btn {
+  margin-top: 0.75rem;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: var(--pink);
+  padding: 1.5rem 2rem;      /* replaces the fixed height, grows with the text */
+  text-align: center;
+}
+
+.site-footer p {
+  color: #fff;
+  font-size: 0.75rem;
+  max-width: 700px;          /* keeps the line length readable */
+  margin: 0 auto;            /* centers the text block */
+  line-height: 1.5;
+}
+
+/* ========== MOBILE ========== */
+/* When the screen is 800px wide or less, stack things vertically */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
